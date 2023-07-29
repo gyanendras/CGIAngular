@@ -1,7 +1,7 @@
 <div class="container-fluid border border-primary">
 <form  #regForm="ngForm" (ngSubmit)="onSubmit(regForm)">
     <div class="form-group">
-    <label>FirstName</label>
+    <label for="fname">FirstName</label>
     <input type="text" id="fname" required
     [(ngModel)]="p.firstName" name="fname" #fname="ngModel">
     </div>
