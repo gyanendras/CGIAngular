@@ -6,17 +6,25 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { RegisterformComponent } from './registerform/registerform.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AboutUsComponentComponent } from './about-us-component/about-us-component.component';
+import { CareersComponentComponent } from './careers-component/careers-component.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    RegisterformComponent
+    RegisterformComponent,
+    AboutUsComponentComponent,
+    CareersComponentComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    NgbModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
