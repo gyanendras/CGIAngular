@@ -1,8 +1,13 @@
-<p>home works!</p>
+<div class="nav navbar-nav bg-body-tertiary">
+<a  routerLink="/aboutUs" class="btn btn-primary">{{txtAboutUS}}</a>
+<a  routerLink="/careers" class="btn btn-primary">Careers</a>
+</div>
+
+<p class="text-primary">home works!</p>
 <img (mouseover)="onImg($event)" [src]="imgpath" alt="OfficeImg" height="300px" width="80%">
 
 <div id="ins1" class="text-primary border border-primary">
-    <h1 (click)="hiAction()">{{insights}}</h1>
+    <h1 (click)="homeService.hiAction()">{{insights}}</h1>
     <p id='p1'  >{{des}}</p>
 </div>
     

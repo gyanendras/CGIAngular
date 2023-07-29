@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { HomeServiceService } from './home-service.service';
 
 @Component({
   selector: 'app-home',
@@ -7,19 +8,18 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
   insights:String="Insights";
+  txtAboutUS:String="About Us New";
   des:String="We provide a global antenna based on facts, not hype, to help improve returns on your IT and business investments";
   imgpath:String="../../assets/images/office.jpg"
   h:String= "300px" ;
   x:String="";
+  homeService:HomeServiceService = inject(HomeServiceService);
   
 
-  hiAction():String{
-    console.log("Just clicked Hi");
-  return "clicked Hi";
-  } 
+
 
   anotherMeth(){
-    this.x =  this.hiAction();
+    this.x =  this.homeService.hiAction();
   }
 
   onImg(ev:Event){
