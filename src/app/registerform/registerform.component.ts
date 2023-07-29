@@ -11,9 +11,10 @@ import {NgForm} from '@angular/forms';
 })
 export class RegisterformComponent {
 p = new Person();
+
 submitted = false;
 
-onSubmit(x:NgForm) { console.log(x) }
+onSubmit(x:NgForm) { console.log(x); }
 
   
 

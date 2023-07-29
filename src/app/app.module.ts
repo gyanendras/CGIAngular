@@ -10,7 +10,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AboutUsComponentComponent } from './about-us-component/about-us-component.component';
 import { CareersComponentComponent } from './careers-component/careers-component.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import {MatExpansionModule} from '@angular/material/expansion';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +24,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     FormsModule,
     NgbModule,
+    MatExpansionModule,
     BrowserAnimationsModule
   ],
   providers: [],
