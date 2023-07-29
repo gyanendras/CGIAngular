@@ -1,0 +1,25 @@
+<div class="container-fluid border border-primary">
+<form  #regForm="ngForm" (ngSubmit)="onSubmit(regForm)">
+    <div class="form-group">
+    <label>FirstName</label>
+    <input type="text" id="fname" required
+    [(ngModel)]="p.firstName" name="fname" #fname="ngModel">
+    </div>
+    <div [hidden]="fname.valid || fname.pristine"
+     class="alert alert-danger">
+         Name is required
+    </div>
+    <span class="">{{p.firstName}}</span>
+
+    <div class="form-group">
+        <label for="city">City</label>
+        <select class="form-control"  id="city-1"
+                required
+                [(ngModel)]="p.city" name="city-1">
+          <option *ngFor="let c of p.city" [value]="c">{{c}}</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-success" [disabled]="!regForm.form.valid">Submit</button>
+</form>  
+</div>  
+
