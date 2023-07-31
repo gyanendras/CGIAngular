@@ -1,5 +1,5 @@
 export class Person {
-    firstName:string = "";
+    firstName:string = "FnameInitial";
     lastName:string="";
     email:string="";
     phone:number=0;

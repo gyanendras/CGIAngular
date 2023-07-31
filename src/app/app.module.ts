@@ -11,13 +11,17 @@ import { AboutUsComponentComponent } from './about-us-component/about-us-compone
 import { CareersComponentComponent } from './careers-component/careers-component.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatExpansionModule} from '@angular/material/expansion';
+import { HeaderComponentComponent } from './header-component/header-component.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     RegisterformComponent,
     AboutUsComponentComponent,
-    CareersComponentComponent
+    CareersComponentComponent,
+    HeaderComponentComponent
   ],
   imports: [
     BrowserModule,
@@ -25,6 +29,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
     FormsModule,
     NgbModule,
     MatExpansionModule,
+    MatToolbarModule,    
     BrowserAnimationsModule
   ],
   providers: [],
