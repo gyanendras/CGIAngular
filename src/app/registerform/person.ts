@@ -6,7 +6,7 @@ export class Person {
     dob:Date=new Date();
     gender:string="";
     areaOfIn=["IOT","AI","FSD"];
-    city=["Delhi","Pune","Vizag"];
+    city=["Delhi","Pune","Vizag","Mumbai"];
 
     
 }

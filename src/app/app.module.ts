@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +14,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { HeaderComponentComponent } from './header-component/header-component.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import { MyReactiveFormComponent } from './my-reactive-form/my-reactive-form.component';
 
 @NgModule({
   declarations: [
@@ -21,18 +23,20 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     RegisterformComponent,
     AboutUsComponentComponent,
     CareersComponentComponent,
-    HeaderComponentComponent
+    HeaderComponentComponent,
+    MyReactiveFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     NgbModule,
+    HttpClientModule,
     MatExpansionModule,
     MatToolbarModule,    
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [HttpClientModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
