@@ -4,6 +4,7 @@ import { Person } from './person';
 import {NgForm} from '@angular/forms';
 import { MyRestService } from '../my-rest.service';
 import { R3SelectorScopeMode } from '@angular/compiler';
+import { Observable, throwError } from 'rxjs'; 
 
 
 
@@ -14,15 +15,29 @@ import { R3SelectorScopeMode } from '@angular/compiler';
 })
 export class RegisterformComponent {
 p = new Person();
+res!: String[];
+
+
 constructor(private rs:MyRestService){}
 
 submitted = false;
 
-onSubmit(x:NgForm) { 
+onSubmit(x:NgForm) {
+  var z:Observable<any>; 
   console.log(x);
-  var z= this.rs.get("http://localhost:3000/posts"); 
+  
+  z= this.rs.get("http://localhost:3000/posts"); 
   console.log(z);
+  z.subscribe(
+    success=>{
+      console.log("got result");
+      console.log(success);
+      this.res=success;
+    },
+    error=>{console.log(error)}
+  );
 
+  console.log(this.res);
 
 
 }
