@@ -4,7 +4,9 @@ import { Person } from './person';
 import {NgForm} from '@angular/forms';
 import { MyRestService } from '../my-rest.service';
 import { R3SelectorScopeMode } from '@angular/compiler';
-import { Observable, throwError } from 'rxjs'; 
+import { Observable, throwError } from 'rxjs';
+import { Note } from '../note';
+import { NoteArr } from '../note-arr';
 
 
 
@@ -15,7 +17,8 @@ import { Observable, throwError } from 'rxjs';
 })
 export class RegisterformComponent {
 p = new Person();
-res!: String[];
+res!: Note[];
+
 
 
 constructor(private rs:MyRestService){}
@@ -23,21 +26,42 @@ constructor(private rs:MyRestService){}
 submitted = false;
 
 onSubmit(x:NgForm) {
-  var z:Observable<any>; 
+  var z:Observable<Note[]>; 
+  var q:Observable<any>; 
   console.log(x);
-  
-  z= this.rs.get("http://localhost:3000/posts"); 
-  console.log(z);
-  z.subscribe(
-    success=>{
-      console.log("got result");
-      console.log(success);
-      this.res=success;
+
+  var n1 = new Note("T4","N4",4);
+  var n2 = new Note("T5","N5",5);
+
+  var nArr = [n1,n2];
+
+  z= this.rs.get("http://localhost:3000/notes"); 
+  q= this.rs.post("http://localhost:3000/notes",nArr);
+  // console.log(z);
+  z.subscribe({
+    next: (v) => {
+    this.res=v;
+   console.log(this.res);
+   console.log(this.res[0].id);
+   console.log(this.res[0].note);
+   console.log(this.res[0].title);
     },
-    error=>{console.log(error)}
+    error: (e) => console.error(e),
+    complete: () => console.info('get complete')}
   );
 
-  console.log(this.res);
+  console.log("afert rest call");
+  console.log(this.res); 
+  //console.log(this.res[0].title);
+  //console.log(this.res[0].note);
+
+q.subscribe({
+  next: (v) => console.log(v),
+  error: (e) => {console.error(e);
+  },
+  complete: () => console.info('post complete')
+}
+);
 
 
 }

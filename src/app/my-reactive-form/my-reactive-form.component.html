@@ -1,1 +1,13 @@
-<p>my-reactive-form works!</p>
+<form [formGroup]="regForm"  #refNgForm="ngForm" (ngSubmit)="onSubmit()">
+    <div>
+        <label for="firstName">FirstName</label>
+        <input type="text" name="firstName" id="firstName">
+      <div ></div>
+    </div>  
+    <div>
+        <label for="email">Email</label>
+        <input type="text" name="email" id="email">
+    </div>   
+    <p>Complete the form to enable button.</p>
+    <button type="submit" [disabled]="!regForm.valid">Submit</button>
+</form>

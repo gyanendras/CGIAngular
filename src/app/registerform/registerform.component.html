@@ -21,5 +21,10 @@
       </div>
       <button type="submit" class="btn btn-success" [disabled]="!regForm.form.valid">Submit</button>
 </form>  
+<ul>
+  <li *ngFor="let i of res">{{i.title}} {{i.note}}
+    
+  </li>
+</ul>
 </div>  
 

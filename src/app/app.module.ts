@@ -15,6 +15,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import { HeaderComponentComponent } from './header-component/header-component.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { MyReactiveFormComponent } from './my-reactive-form/my-reactive-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { MyReactiveFormComponent } from './my-reactive-form/my-reactive-form.com
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     NgbModule,
     HttpClientModule,
     MatExpansionModule,
