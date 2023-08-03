@@ -18,6 +18,7 @@ import { MyReactiveFormComponent } from './my-reactive-form/my-reactive-form.com
 import { ReactiveFormsModule } from '@angular/forms';
 import { MyNotesComponent } from './my-notes/my-notes.component';
 import { MyNoteStoreComponent } from './my-note-store/my-note-store.component';
+import { LoginComponent } from './auth/login/login.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { MyNoteStoreComponent } from './my-note-store/my-note-store.component';
     HeaderComponentComponent,
     MyReactiveFormComponent,
     MyNotesComponent,
-    MyNoteStoreComponent
+    MyNoteStoreComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

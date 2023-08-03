@@ -1,0 +1,21 @@
+<form [formGroup]="loginForm"  #refNgForm="ngForm" (ngSubmit)="onSubmit()">
+    <div>
+        <label for="userName">UserName</label>
+        <input type="text" formControlName="userName" id="userName">
+        <div *ngIf="loginForm.controls.userName.errors?.['required']">
+            UserName is required, for authentication.
+        </div>
+
+    </div>  
+    <div>
+        <label for="password">Password</label>
+        <input type="text" formControlName="password" id="password">
+    </div> 
+    <div *ngIf="loginForm.controls.password.errors?.['password']">
+        Enter password.
+    </div>  
+    <p>Form Status: {{ loginForm.status }} </p>
+    <p>Complete the form to enable button.</p>
+    <button type="submit" [disabled]="!loginForm.valid">Submit</button>
+</form>
+
