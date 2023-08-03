@@ -1,0 +1,10 @@
+<div >my-notes works!</div>
+<div >
+    <label>which List</label>
+</div>
+<ul  *ngFor="let i of narr">
+    <li>{{i.title}}</li>
+    <li>{{i.note}}</li>
+</ul>
+<app-my-note-store [impNote]="impOrNot" (evToParent)="dispList($event)"
+></app-my-note-store>

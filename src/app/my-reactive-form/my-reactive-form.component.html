@@ -4,12 +4,18 @@
         <input type="text" formControlName="firstName" id="firstName">
         <div *ngIf="regForm.controls.firstName.errors?.['required']">
             Name is required.
-          </div>
+        </div>
+        <div *ngIf="regForm.controls.firstName.errors?.['minlength']">
+            Min Lenght 4 is required.
+        </div>
     </div>  
     <div>
         <label for="email">Email</label>
         <input type="text" formControlName="email" id="email">
-    </div>   
+    </div> 
+    <div *ngIf="regForm.controls.email.errors?.['email']">
+        Enter correct email.
+    </div>  
     <p>Form Status: {{ regForm.status }} </p>
     <p>Complete the form to enable button.</p>
     <button type="submit" [disabled]="!regForm.valid">Submit</button>

@@ -16,6 +16,8 @@ import { HeaderComponentComponent } from './header-component/header-component.co
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { MyReactiveFormComponent } from './my-reactive-form/my-reactive-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MyNotesComponent } from './my-notes/my-notes.component';
+import { MyNoteStoreComponent } from './my-note-store/my-note-store.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     AboutUsComponentComponent,
     CareersComponentComponent,
     HeaderComponentComponent,
-    MyReactiveFormComponent
+    MyReactiveFormComponent,
+    MyNotesComponent,
+    MyNoteStoreComponent
   ],
   imports: [
     BrowserModule,

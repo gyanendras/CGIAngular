@@ -20,12 +20,13 @@ export class MyReactiveFormComponent implements OnInit  {
 });
 
 ngOnInit(){
-  this.regForm.controls["firstName"].setValidators(Validators.required);
+  this.regForm.controls["firstName"].setValidators([Validators.required,Validators.minLength(4)]);
   this.regForm.controls["email"].setValidators(Validators.email);
 }
 
 onSubmit(){
   console.log(this.regForm.value);
+  
 }
 
 }
