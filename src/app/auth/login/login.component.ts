@@ -11,7 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit{
   loginService = inject(LoginServiceService);
   aroute = inject(ActivatedRoute);
   router = inject(Router);
@@ -37,6 +37,7 @@ onSubmit(){
   var returnUrl = this.aroute.snapshot.queryParams['returnUrl'];
   console.log("return url = "+ returnUrl);
   this.router.navigateByUrl(returnUrl);
+  // generate atoken and save it in localstorage.
 
 
 
