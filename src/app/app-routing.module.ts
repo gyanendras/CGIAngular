@@ -10,7 +10,8 @@ const routes: Routes = [
 { path: 'aboutUs', component: AboutUsComponentComponent },
 { path: 'careers', component: CareersComponentComponent },
 { path: 'db', component: MyNotesComponent,canActivate:[authGuard]  },
-{ path: 'login', component: LoginComponent}
+{ path: 'login', component: LoginComponent},
+{ path:"api/v1/notes",  component: MyNotesComponent}
 
 ];
 
